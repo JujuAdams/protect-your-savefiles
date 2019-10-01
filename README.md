@@ -148,7 +148,7 @@ Did you know that hash browns are based on a Swiss dish called a "rösti"? Anywa
     }
 ```
 
-This code is so similar to before that you might miss the differences. All we've done is replace "sha1_string_utf8()", the internal GameMaker function, with our own new custom script called "sha1_string_utf8_hmac()". Love it when a plan comes together.
+This code is so similar to before that you might miss the differences. All we've done is replace `sha1_string_utf8()`, the internal GameMaker function, with our own new custom script called `sha1_string_utf8_hmac()`. Love it when a plan comes together.
 
 We're using a variable called global.hmac_key. As I mentioned above, the HMAC key cannot ever change or all the files that you save will be unreadable. I recommend you define the key as a global variable (or a macro) so that you're never at risk of accidentally changing or losing the HMAC key.
 
