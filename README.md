@@ -47,9 +47,7 @@ This is surprisingly easy to do in GameMaker, only a few lines of code. Here's h
     file_text_close(_file);
 ```
 
-Fun fact - the # symbol is never called "pound" in the UK, it's always been the "hash symbol", long before Twitter.
-
-Anyway, here's how we load our savefile and verify it:
+Fun fact - the # symbol is never called "pound" in the UK, it's always been the "hash symbol", long before Twitter. Anyway, here's how we load our savefile and verify it:
 
 ```
     //Load in the save string
@@ -123,9 +121,7 @@ Here's what this code looks like when we're using HMAC. First up, saving:
     file_text_close(_file);
 ```
 
-Did you know that hash browns are based on a Swiss dish called a "rösti"?
-
-Anyway, here's loading using HMAC:
+Did you know that hash browns are based on a Swiss dish called a "rösti"? Anyway, here's loading using HMAC:
 
 ```
     //Load in the save string
