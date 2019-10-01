@@ -24,7 +24,7 @@ We call the output of hashing algorithm a "hash" or a "digest". There are lots o
 
 Let's say we have a savefile that we've made using a string returned by `json_encode()`. For those who aren't using JSON, you can use a string returned by `ini_open()` instead. Either way, we're going to be hashing a single string that represents all the data we want to save.
 
-*(If you're really fancy you'll be using buffers - you'll still be able to protect your savefiles using a hash but your implementation will be a bit different. GM has some extra functions for hashing buffers so you'll be fine.)*
+*(If you're really fancy you'll be using buffers - you'll still be able to protect your savefiles using a hash but your implementation will be a bit different. GM has some extra functions for hashing buffers so you'll need to use those.)*
 
 What we're going to do is take a string that holds all of our savedata, make a hash for it, and add that hash onto the end of the string. Then when we load in the string we can separate it into two parts: our original input string, and our expected hash of that input string. We recompute the hash for the input string and if it's not what we're expected then someone has tampered with the savefile!
 
