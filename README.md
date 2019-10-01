@@ -169,6 +169,10 @@ HMAC is super useful for guaranteeing the authenticity of savefiles, but it does
 
 Times have changed a lot since I was five years old in the mid-90s; we have online services and micro-transactions and DLC and that means protecting your savefiles is more important than ever. I hope this guide helps you write more secure code for your games.
 
+You can find this example (and loads of other useful code) on my GitHub: https://github.com/JujuAdams/protect-your-savefiles
+
+If you run into trouble you can always send me a message on Twitter: https://twitter.com/jujuadams
+
 
 
 \* The HMAC algorithm is formally defined in 1997's RFC2104. You can find the specification here: https://tools.ietf.org/html/rfc2104
