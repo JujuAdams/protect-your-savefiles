@@ -22,7 +22,7 @@ We call the output of hashing algorithm a "hash" or a "digest". There are lots o
 
 &nbsp;
 
-Let's say we have a savefile that we've made using a string returned by json_encode(). For those who aren't using JSON, you can use a string returned by ini_open() instead. Either way, we're going to be hashing a single string that represents all the data we want to save.
+Let's say we have a savefile that we've made using a string returned by `json_encode()`. For those who aren't using JSON, you can use a string returned by `ini_open()` instead. Either way, we're going to be hashing a single string that represents all the data we want to save.
 
 *(If you're really fancy you'll be using buffers - you'll still be able to protect your savefiles using a hash but your implementation will be a bit different. GM has some extra functions for hashing buffers so you'll be fine.)*
 
