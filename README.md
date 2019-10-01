@@ -78,7 +78,7 @@ Fun fact - the # symbol is never called "pound" in the UK, it's always been the 
     }
 ```
 
-Job done, that was easy. Savefiles protected, fame and fortune await, yeah? No... unfortunately, this hashing process isn't quite perfect. This system is sufficient to deter casual savefile editing but anyone a bit more determined will immediately be able to fool this system. The problem is that once a would-be hacker figures out the hashing algorithm then it's very easy to simply edit the savefile, recalculate the hash, and change the  hash stored in the savefile. Takes about 5 minutes. When the game loads in this edited savefile it doesn't know that anything's changed because the hash has changed too!
+Job done, that was easy. Savefiles protected, fame and fortune await, yeah? No... unfortunately, this hashing process isn't quite perfect. This system is sufficient to deter casual savefile editing but anyone a bit more determined will immediately be able to fool this system. Once a would-be hacker figures out the hashing algorithm then it's very easy to simply edit the savefile, recalculate the hash, and change the  hash stored in the savefile. Takes about 5 minutes. When the game loads in this edited savefile it doesn't know that anything's changed because the hash has changed too!
 
 &nbsp;
 
