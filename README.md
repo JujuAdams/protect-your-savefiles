@@ -9,7 +9,7 @@ I started my gamedev career at the tender age of 5 by editing savefiles on an ol
 
 This short article will show you a way to solve one of these problems.
 
-
+&nbsp;
 
 Let's talk about "hashing algorithms". Hashing can refer to many things, but here it's also a particular type of cryptographic function. A good hashing function has many properties, but let's focus on the important ones:
 
@@ -20,7 +20,7 @@ Let's talk about "hashing algorithms". Hashing can refer to many things, but her
 
 We call the output of hashing algorithm a "hash" or a "digest". There are lots of hashing functions out there, but we're going to use SHA1. We're not so concerned with the actual algorithm, just that it obeys the rules above. We're going to use a hash as a way to check a savefile.
 
-
+&nbsp;
 
 Let's say we have a savefile that we've made using a string returned by json_encode(). For those who aren't using JSON, you can use a string returned by ini_open() instead. Either way, we're going to be hashing a single string that represents all the data we want to save.
 
@@ -82,7 +82,7 @@ Anyway, here's how we load our savefile and verify it:
 
 Job done, that was easy. Savefiles protected, fame and fortune await, yeah? No... unfortunately, this hashing process isn't quite perfect. This system is sufficient to deter casual savefile editing but anyone a bit more determined will immediately be able to fool this system. The problem is that once a would-be hacker figures out the hashing algorithm then it's very easy to simply edit the savefile, recalculate the hash, and change the  hash stored in the savefile. Takes about 5 minutes. When the game loads in this edited savefile it doesn't know that anything's changed because the hash has changed too!
 
-
+&nbsp;
 
 Now, obviously I wouldn't have relived the traumatic memory of my first computer getting totalled by wet Georgian-era horse poop and straw if there wasn't a satisfying conclusion to all this.
 
@@ -90,7 +90,7 @@ Some very clever people (specifically Bellare/Canetti/Krawczyk in 1996\*) came u
 
 If we encrypt the hash then it solves the flaw we identified. If someone changes the savefile then tries to recalculate the hash to fool the game they'll get a different hash to what the game is expecting. Only the game can create HMAC hashes that are authentic which is exactly what we want.
 
-
+&nbsp;
 
 So, how do we use HMAC? The HMAC algorithm itself is relatively simple. Here it is as a compact definition:
 
@@ -105,7 +105,7 @@ We don't need to know exactly what this means to use it, fortunately! Let's focu
 
 This means that we can drop this HMAC system into the savefile code we wrote up above with only a couple changes. This is extremely convenient. All we need to do is replace our hashing function with an HMAC variant, and then provide a key for the HMAC function. In our case, a key can be a string of any length. The key should never ever change - the key has to be the same so that we can verify savefiles in the future.
 
-
+&nbsp;
 
 Here's what this code looks like when we're using HMAC. First up, saving:
 
@@ -161,11 +161,11 @@ We're using a variable called global.hmac_key. As I mentioned above, the HMAC ke
 
 I've glossed over the actual GML implementation of HMAC. It's not a native GameMaker function so you'll need a script to do it. In the project below I've included an implementation of HMAC-SHA1 in GML. All you need to do is copy across the "sha1_string_utf8_hmac()" and "hex_string_byte()" scripts and you've got access to HMAC in your game. The project also includes the example code above: 
 
-
+&nbsp;
 
 HMAC is super useful for guaranteeing the authenticity of savefiles, but it does have some drawbacks. If you've been following along closely, you'll notice that savefile hashing does not encrypt or obfuscate the data in the file whatsoever. Everyone can read exactly what you're storing, it just stops them from editing what you've saved. If you need to hide and encrypt data then you'll need to use a proper encryption algorithm. Secondly, HMAC in GameMaker isn't the fastest thing in the world so you want to do it only where absolutely necessary i.e. when saving and loading files. Finally, no encryption or copy-protection or security system is entirely hacker-proof. It might take ages for people to crack into your game, but if they're determined then they will get there eventually.
 
-
+&nbsp;
 
 Times have changed a lot since I was five years old in the mid-90s; we have online services and micro-transactions and DLC and that means protecting your savefiles is more important than ever. I hope this guide helps you write more secure code for your games.
 
@@ -173,6 +173,6 @@ You can find this example (and loads of other useful code) on my GitHub: https:/
 
 If you run into trouble you can always send me a message on Twitter: https://twitter.com/jujuadams
 
-
+&nbsp;
 
 \* The HMAC algorithm is formally defined in 1997's RFC2104. You can find the specification here: https://tools.ietf.org/html/rfc2104
