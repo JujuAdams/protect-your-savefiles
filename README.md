@@ -35,7 +35,7 @@ This is surprisingly easy to do in GameMaker, only a few lines of code. Here's h
     var _save_string = json_encode(save_map);
     
     //Make a hash (we're using the UTF-8 hash variant here)
-    //SHA1 strings are exactly 40 characters long
+    //SHA1 hash strings are exactly 40 characters long
     var _hash = sha1_string_utf8(_save_string);
     
     //Append the hash onto the string
