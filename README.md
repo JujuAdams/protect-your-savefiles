@@ -24,7 +24,7 @@ We call the output of hashing algorithm a "hash" or a "digest". There are lots o
 
 Let's say we have a savefile that we've made using a string returned by json_encode(). For those who aren't using JSON, you can use a string returned by ini_open() instead. Either way, we're going to be hashing a single string that represents all the data we want to save.
 
-(If you're really fancy you'll be using buffers - you'll still be able to protect your savefiles using a hash but your implementation will be a bit different. GM has some extra functions for hashing buffers so you'll be fine.)
+*(If you're really fancy you'll be using buffers - you'll still be able to protect your savefiles using a hash but your implementation will be a bit different. GM has some extra functions for hashing buffers so you'll be fine.)*
 
 What we're going to do is take a string that holds all of our savedata, make a hash for it, and add that hash onto the end of the string. Then when we load in the string, we can separate it into two parts: our input string and our expected hash of that input string. We recompute the hash for the input string and if it's not what we're expected then someone has tampered with the savefile!
 
@@ -94,12 +94,9 @@ So, how do we use HMAC? The HMAC algorithm itself is relatively simple. Here it 
 
 `HMAC-SHA1(Key, Message)  =  SHA1((Key' ^ OuterPadding) |+| SHA1((Key' ^ InnerPadding) |+| Message))`
 
-|+| means concatenation (i.e. sticking one thing onto the end of another) and ^ means a bitwise XOR operation.
+`|+|` means concatenation (i.e. sticking one thing onto the end of another) and `^` means a bitwise XOR operation.
 
-We don't need to know exactly what this means to use it, fortunately! Let's focus in on the important details of this algorithm:
-
-1) The HMAC function takes two inputs - a "key" and the message we want to protect;
-2) It returns a hash made using the SHA1 algorithm, just like before.
+We don't need to know exactly what this means to use it, fortunately! Let's focus in on the important details of this algorithm: The HMAC function takes two inputs - a "key" and the message we want to protect, and it returns a hash made using the SHA1 algorithm, just like before.
 
 This means that we can drop this HMAC system into the savefile code we wrote up above with only a couple changes. This is extremely convenient. All we need to do is replace our hashing function with an HMAC variant, and then provide a key for the HMAC function. In our case, a key can be a string of any length. The key should never ever change - the key has to be the same so that we can verify savefiles in the future.
 
