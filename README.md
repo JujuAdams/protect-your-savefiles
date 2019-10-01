@@ -150,9 +150,9 @@ Did you know that hash browns are based on a Swiss dish called a "rösti"? Anywa
 
 This code is so similar to before that you might miss the differences. All we've done is replace `sha1_string_utf8()`, the internal GameMaker function, with our own new custom script called `sha1_string_utf8_hmac()`. Love it when a plan comes together.
 
-We're using a variable called global.hmac_key. As I mentioned above, the HMAC key cannot ever change or all the files that you save will be unreadable. I recommend you define the key as a global variable (or a macro) so that you're never at risk of accidentally changing or losing the HMAC key.
+We're using a variable called `global.hmac_key`. As I mentioned above, the HMAC key cannot ever change or all the files that you save will be unreadable. I recommend you define the key as a global variable (or a macro) so that you're never at risk of accidentally changing or losing the HMAC key.
 
-I've glossed over the actual GML implementation of HMAC. It's not a native GameMaker function so you'll need a script to do it. In the project below I've included an implementation of HMAC-SHA1 in GML. All you need to do is copy across the "sha1_string_utf8_hmac()" and "hex_string_byte()" scripts and you've got access to HMAC in your game. The project also includes the example code above: 
+I've glossed over the actual GML implementation of HMAC. It's not a native GameMaker function so you'll need a script to do it. In the project below I've included an implementation of HMAC-SHA1 in GML. All you need to do is copy across the `sha1_string_utf8_hmac()` and `hex_string_byte()` scripts and you've got access to HMAC in your game. The project also includes the example code above: 
 
 &nbsp;
 
@@ -168,4 +168,4 @@ If you run into trouble you can always send me a message on Twitter: https://twi
 
 &nbsp;
 
-\* The HMAC algorithm is formally defined in 1997's RFC2104. You can find the specification here: https://tools.ietf.org/html/rfc2104
+*\* The HMAC algorithm is formally defined in 1997's RFC2104. You can find the specification here: https://tools.ietf.org/html/rfc2104*
