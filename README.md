@@ -26,7 +26,7 @@ Let's say we have a savefile that we've made using a string returned by `json_en
 
 *(If you're really fancy you'll be using buffers - you'll still be able to protect your savefiles using a hash but your implementation will be a bit different. GM has some extra functions for hashing buffers so you'll be fine.)*
 
-What we're going to do is take a string that holds all of our savedata, make a hash for it, and add that hash onto the end of the string. Then when we load in the string, we can separate it into two parts: our input string and our expected hash of that input string. We recompute the hash for the input string and if it's not what we're expected then someone has tampered with the savefile!
+What we're going to do is take a string that holds all of our savedata, make a hash for it, and add that hash onto the end of the string. Then when we load in the string we can separate it into two parts: our original input string, and our expected hash of that input string. We recompute the hash for the input string and if it's not what we're expected then someone has tampered with the savefile!
 
 This is surprisingly easy to do in GameMaker, only a few lines of code. Here's how we save our file:
 
