@@ -88,6 +88,8 @@ Some very clever people (specifically Bellare/Canetti/Krawczyk in 1996\*) came u
 
 If we encrypt the hash then it solves the flaw we identified. If someone changes the savefile then tries to recalculate the hash to fool the game they'll get a different hash to what the game is expecting. Only the game can create HMAC hashes that are authentic which is exactly what we want.
 
+*\* The HMAC algorithm is formally defined in 1997's RFC2104. You can find the specification here: https://tools.ietf.org/html/rfc2104*
+
 &nbsp;
 
 So, how do we use HMAC? The HMAC algorithm itself is relatively simple. Here it is as a compact definition:
@@ -165,7 +167,3 @@ Times have changed a lot since I was five years old in the mid-90s; we have onli
 You can find this example (and loads of other useful code) on my GitHub: https://github.com/JujuAdams/protect-your-savefiles
 
 If you run into trouble you can always send me a message on Twitter: https://twitter.com/jujuadams
-
-&nbsp;
-
-*\* The HMAC algorithm is formally defined in 1997's RFC2104. You can find the specification here: https://tools.ietf.org/html/rfc2104*
