@@ -11,6 +11,12 @@ This short article will show you a way to solve one of these problems.
 
 &nbsp;
 
+Savefiles contain lots of information, most of which is critical to making sure the player doesn't lose progress between game sessions. You'll save stuff like highscores, number of lives left, which levels have been beaten, what bonus cosmetic items have been unlocked, and so on. If someone was to come along and change some of these numbers then it'll mean they can skip large parts of the game, give themselves fancy cosmetic items they haven't earnt, or cheat to make the game easier.
+
+Making the game easier isn't an issue in itself (accessibility is a big deal for many kinds of gamer) but when it comes to achievements and online leaderboards it is essential that everyone is competing on a level playing field. Having a security holes means that people will be able to circumvent your carefully designed game rules and cheat, putting players who are playing legitimately at an overwhelming disadvantage. There are many kinds of security hole, but savefile editing is the one we'll be dealing with today.
+
+&nbsp;
+
 Let's talk about "hashing algorithms". Hashing can refer to many things, but here we mean particular type of cryptographic function. A good hashing function has many properties, but let's focus on the important ones:
 
 1) A hashing function takes a single input and gives a single output (of a fixed size);
