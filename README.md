@@ -24,7 +24,7 @@ Let's talk about "hashing algorithms". Hashing can refer to many things, but her
 3) It's very hard to reverse the process - you shouldn't know the input given only the output;
 4) It should be hard to find two different inputs that give the same output.
 
-We call the output of hashing algorithm a "hash" or a "digest". There are lots of hashing functions out there, but we're going to use SHA1. We're not so concerned with the actual algorithm, just that it obeys the rules above. We're going to use a hash as a way to check that a savefile has not been edited - if the savefile changes, the hash of the savefile also changes.
+We call the output of a hashing algorithm a "hash" or a "digest". There are lots of hashing functions out there, but we're going to use SHA1. We're not so concerned with the actual algorithm, just that it obeys the rules above. We're going to use a hash as a way to check that a savefile has not been edited - if the savefile changes, the hash of the savefile also changes.
 
 &nbsp;
 
