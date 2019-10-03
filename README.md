@@ -17,7 +17,7 @@ Making the game easier isn't an issue in itself (accessibility is a big deal for
 
 &nbsp;
 
-Let's talk about "hashing algorithms". Hashing can refer to many things, but here we mean particular type of cryptographic function. A good hashing function has many properties, but let's focus on the important ones:
+Let's talk about "hashing algorithms". Hashing can refer to many things, but here we mean a particular type of cryptographic function. A good hashing function has many properties, but let's focus on the important ones:
 
 1) A hashing function takes a single input and gives a single output (of a fixed size);
 2) If you run the hashing function twice on two slightly different inputs, the outputs should be different;
