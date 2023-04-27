@@ -2,6 +2,8 @@
 
 ### [Juju Adams](https://www.jujuadams.com/)
 
+&nbsp;
+
 I started my gamedev career at the tender age of 5 by editing savefiles on an old Acorn computer. I think I was giving myself extra lives on James Pond. Unfortunately, that computer bit the dust when my house's ceiling collapsed directly onto it. I learnt a couple things from the experience:
 
 1) Don't let your sink overflow because wet 18th Century ceilings are unstable and liable to collapse;
