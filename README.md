@@ -1,6 +1,6 @@
 <h1 align="center">Protect Your Savefiles</h1>
 
-### @jujuadams
+### [Juju Adams](https://www.jujuadams.com/)
 
 I started my gamedev career at the tender age of 5 by editing savefiles on an old Acorn computer. I think I was giving myself extra lives on James Pond. Unfortunately, that computer bit the dust when my house's ceiling collapsed directly onto it. I learnt a couple things from the experience:
 
